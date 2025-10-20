@@ -147,7 +147,9 @@ end
 
 # ------------------- Main methods -------------------
 """
-Fit the ICS model to the data.
+    fit!(model::ICSModel, X::Union{Matrix{Float64}, DataFrame})
+
+Fit the ICS model to data.
 
 This function relies on several helper methods to perform the ICS transformation:
 _validate_input, _compute_first_scatter, _compute_second_scatter,
@@ -204,6 +206,8 @@ function fit!(model::ICSModel, X::Union{Matrix{Float64}, DataFrame})
 end
 
 """
+    predict(model::ICSModel, X::Union{Matrix{Float64}, DataFrame})
+
 Transform the data using the fitted ICS model.
 
 Parameters:
@@ -234,6 +238,8 @@ function predict(model::ICSModel, X::Union{Matrix{Float64}, DataFrame})
 end
 
 """
+    fit_predict!(model::ICSModel, X::Union{Matrix{Float64}, DataFrame}) = predict(fit!(model, X), X)
+
 Fit the ICS model and transform the data using the fitted ICS model.
 
 Parameters:

@@ -7,8 +7,8 @@ DocMeta.setdocmeta!(Robustbase, :DocTestSetup, :(using Robustbase); recursive=tr
 makedocs(sitename = "ICS",
     format = Documenter.HTML(),
     modules = [ICS],
-    warnonly = :missing_docs
-    ## warnonly = [:missing_docs, :docs_block]
+    ## warnonly = :missing_docs
+    warnonly = [:missing_docs, :docs_block]
 )
 
 # Documenter can also automatically deploy documentation to gh-pages.
